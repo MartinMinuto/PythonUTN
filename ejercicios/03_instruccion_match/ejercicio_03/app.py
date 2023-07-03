@@ -52,13 +52,13 @@ class App(customtkinter.CTk):
             case "Agosto":
                 alert(title="Mes", message="Este mes tiene 30 días o mas")
             case "Septiembre":
-                alert(title="Mes", message="¡Ya pasamos frío, ahora calor!")
+                alert(title="Mes", message="Este mes tiene 30 días o mas")
             case "Octubre":
-                alert(title="Mes", message="¡Ya pasamos frío, ahora calor!")
+                alert(title="Mes", message="Este mes tiene 30 días o mas")
             case "Noviembre":
-                alert(title="Mes", message="¡Ya pasamos frío, ahora calor!")
+                alert(title="Mes", message="Este mes tiene 30 días o mas")
             case "Diciembre":
-                alert(title="Mes", message="¡Ya pasamos frío, ahora calor!")
+                alert(title="Mes", message="Este mes tiene 30 días o mas")
     
     
 if __name__ == "__main__":
