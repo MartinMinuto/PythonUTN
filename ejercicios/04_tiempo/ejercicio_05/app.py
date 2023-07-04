@@ -25,10 +25,10 @@ class App(customtkinter.CTk):
         self.contador  = 0
 
     def btn_mostrar_on_click(self):
-        pass
+        self.after(3000, self.mostrar_mensaje)
 
     def mostrar_mensaje(self):
-        pass
+        print("Bienvenidos a la UTN FRA")
         
             
 

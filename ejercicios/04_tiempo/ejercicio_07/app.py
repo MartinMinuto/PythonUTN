@@ -27,10 +27,11 @@ class App(customtkinter.CTk):
         #self.btn_oculto.grid_forget()
  
     def btn_mostrar_on_click(self):
-        pass
+        self.btn_mostrar.after(2000, self.activar_boton_oculto)
 
     def activar_boton_oculto(self):
-        pass
+        self.btn_oculto.configure(command="self.btn_mostrar_on_click")
+        self.btn_oculto.grid()
         
 
 if __name__ == "__main__":

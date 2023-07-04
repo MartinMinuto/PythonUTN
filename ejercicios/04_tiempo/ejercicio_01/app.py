@@ -24,7 +24,12 @@ class App(customtkinter.CTk):
         self.btn_mostrar.grid(row=1, pady=10, columnspan=2, sticky="nsew")
 
     def btn_mostrar_on_click(self):
-        pass
+        self.mostrar_mensaje()
+
+    def mostrar_mensaje(self):
+        self.after(3000, self.mostrar_mensaje)
+        print("Bienvenidos a la UTN FRA")
+        
         
 
 if __name__ == "__main__":

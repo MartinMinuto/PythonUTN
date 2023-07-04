@@ -34,24 +34,31 @@ class App(customtkinter.CTk):
         self.tiempo_inicial = 0
 
     def btn_mostrar_on_click(self):
-        pass
+        self.start_time = time.time()
+        self.btn_mostrar.after(0, self.activar_boton_oculto)
         
     
     def btn_oculto_1_on_click(self):
-        pass
+        self.flag_btn_1 = True
+        self.btn_check_all_press()
 
     def btn_oculto_2_on_click(self):
-        pass
+        self.flag_btn_2 = True
+        self.btn_check_all_press()
 
     def btn_oculto_3_on_click(self):
-        pass
-    
+        self.flag_btn_3 = True
+        self.btn_check_all_press
     
     def btn_check_all_press(self):
-        pass
+        if self.flag_btn_1 and self.flag_btn_2 and self.flag_btn_3:
+            tiempo_trascurido = time.time() - self.tiempo_inicial
+            print("Tiempo trascurido {0} segundos".format(tiempo_trascurido))
             
     def activar_boton_oculto(self):
-        pass
+        self.btn_oculto_1.grid()
+        self.btn_oculto_2.grid()
+        self.btn_oculto_3.grid()
         
 
 if __name__ == "__main__":

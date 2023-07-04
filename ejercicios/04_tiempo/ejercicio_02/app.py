@@ -28,10 +28,14 @@ class App(customtkinter.CTk):
         self.btn_cancelar.grid(row=2, pady=10, columnspan=2, sticky="nsew")
 
     def btn_mostrar_on_click(self):
-        pass
+        self.mostrar_mensaje()
+
+    def mostrar_mensaje(self):
+        print("Bienvenidos a la UTN FRA")
+        self.timer = self.after(3000, self.mostrar_mensaje)
         
     def btn_cancelar_on_click(self):
-        pass
+        self.after_cancel(self.timer)
 
 if __name__ == "__main__":
     app = App()

@@ -23,10 +23,12 @@ class App(customtkinter.CTk):
 
 
     def btn_mostrar_on_click(self):
-        pass
+        self.btn_mostrar.configure(state="disabled")
+        self.btn_mostrar.after(3000, self.activar_boton)
+        print("Hola")
 
     def activar_boton(self):
-        pass
+        self.btn_mostrar.configure(state="normal")
         
             
 

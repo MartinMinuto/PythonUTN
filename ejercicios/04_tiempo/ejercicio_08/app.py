@@ -25,17 +25,22 @@ class App(customtkinter.CTk):
         self.btn_oculto = customtkinter.CTkButton(master=self, text="Boton Oculto", command=self.btn_oculto_on_click)
         #self.btn_oculto.grid(row=2, pady=10, columnspan=2, sticky="nsew")
         #self.btn_oculto.grid_forget()
+
+        self.start_time = None
  
     def btn_mostrar_on_click(self):
-        pass
+        self.start_time = time.time()
+        self.btn_mostrar.after(2000, self.btn_oculto_on_click)
         
     
     def btn_oculto_on_click(self):
-        pass
+        self.btn_oculto.grid()
+        self.btn_oculto.after(0, self.activar_boton_oculto)
         
-
+        
     def activar_boton_oculto(self):
-        pass
+        elapse_time = time.time() - self.start_time
+        print("Tiempo trascurrido {0} segundo".format(elapse_time))
         
 
 if __name__ == "__main__":
