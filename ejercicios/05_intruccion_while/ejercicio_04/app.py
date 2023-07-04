@@ -25,8 +25,32 @@ class App(customtkinter.CTk):
         
     
     def btn_validar_numero_on_click(self):
-        pass
-    
+        flag_continuar = True
+        while(flag_continuar):
+            numero = prompt(title="Numero", prompt="Coloca tu numero")
+            numero_int = int(numero)
+            if(numero_int == 1):
+                flag_continuar = False
+            elif(numero_int == 2):
+                flag_continuar = False
+            elif(numero_int == 3):
+                flag_continuar = False
+            elif(numero_int == 4):
+                flag_continuar = False
+            elif(numero_int == 5):
+                flag_continuar = False
+            elif(numero_int == 6):
+                flag_continuar = False
+            elif(numero_int == 7):
+                flag_continuar = False
+            elif(numero_int == 8):
+                flag_continuar = False
+            elif(numero_int == 9):
+                flag_continuar = False
+            elif(numero_int == 0):
+                flag_continuar = False
+
+
 if __name__ == "__main__":
     app = App()
     app.mainloop()

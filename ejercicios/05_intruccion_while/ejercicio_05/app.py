@@ -25,7 +25,15 @@ class App(customtkinter.CTk):
         
     
     def btn_validar_letra_on_click(self):
-        pass
+        flag_continuar = True
+        while(flag_continuar):
+            letra = prompt(title="Letra", prompt="Coloca tu letra en mayuscula")
+            if(letra == "U"):
+                flag_continuar = False
+            elif(letra == "T"):
+                flag_continuar = False
+            elif(letra == "N"):
+                flag_continuar = False
             
     
 if __name__ == "__main__":
