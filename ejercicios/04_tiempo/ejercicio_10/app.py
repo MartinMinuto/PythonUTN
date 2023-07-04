@@ -42,27 +42,55 @@ class App(customtkinter.CTk):
         self.tiempo_inicial = 0
 
     def btn_mostrar_on_click(self):
-        pass
+        self.tiempo_inicial = time.time()
+        self.btn_mostrar.after(0, self.activar_boton_oculto)
         
     
     def btn_oculto_1_on_click(self):
-        pass
+        self.flag_btn_1 = True
+        self.btn_check_all_press()
 
     def btn_oculto_2_on_click(self):
-        pass
+        self.flag_btn_2 = True
+        self.btn_check_all_press()
 
     def btn_oculto_3_on_click(self):
-        pass
+        self.flag_btn_3 = True
+        self.btn_check_all_press()
 
     def btn_check_all_press(self):
-        pass
+        if self.flag_btn_1 and self.flag_btn_2 and self.flag_btn_3:
+            tiempo_transcurrido = time.time() - self.tiempo_inicial
+            self.informar_resultado(tiempo_transcurrido)
+            self.restart()
 
     def restart(self):
-        pass
+        self.flag_btn_1 = False
+        self.flag_btn_2 = False
+        self.flag_btn_3 = False
+        self.tiempo_inicial = 0
+        self.btn_oculto_1.grid_forget()
+        self.btn_oculto_2.grid_forget()
+        self.btn_oculto_3.grid_forget()
+
+    def informar_resultado(self, tiempo_transcurrido):
+        if tiempo_transcurrido < 1:
+            mensaje = "Usted es Flash"
+        elif tiempo_transcurrido < 2:
+            mensaje = "Bien ahí"
+        elif tiempo_transcurrido < 3:
+            mensaje = "Medio lenteja"
+        else:
+            mensaje = "¿Te quedaste dormido?"
+
+        print("Tiempo transcurrido: {0} segundos".format(tiempo_transcurrido))
+        print(mensaje)
 
         
     def activar_boton_oculto(self):
-        pass
+        self.btn_oculto_1.grid()
+        self.btn_oculto_2.grid()
+        self.btn_oculto_3.grid()
         
 
 if __name__ == "__main__":
