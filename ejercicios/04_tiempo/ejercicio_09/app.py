@@ -7,6 +7,9 @@ import customtkinter
 
 
 '''
+nombre: Martin
+apellido: Minuto
+
 Luego de presionar el botón 'Iniciar',se disparara ; un temporizador de una función que haga visible los tres botones ocultos. 
 Se deberá calcular e informar la cantidad de segundos transcurridos desde que estos botones se hicieron visibles hasta el momento 
 que el usuario logró pulsar todos los botones.

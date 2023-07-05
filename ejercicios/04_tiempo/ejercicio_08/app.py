@@ -7,6 +7,9 @@ import customtkinter
 
 
 '''
+nombre: Martin
+apellido: Minuto
+
 8 - Luego de presionar el botón 'Iniciar',se disparara ; un temporizador de una función que haga visible el botón "el oculto". 
 Al pulsar el botón "el oculto" se deberá calcular la cantidad de segundos transcurridos desde que este se comenzó a visualizar hasta que fue pulsado.
 '''

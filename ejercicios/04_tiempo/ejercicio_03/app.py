@@ -7,6 +7,9 @@ import customtkinter
 
 
 '''
+nombre: Martin
+apellido: Minuto
+
 Al presionar el botón INICIAR se debe mostrar un mensaje de bienvenida "Bienvenidos a la UTN FRA" 
 cada 2 segundos, y mostrar  la cantidad de veces mostrado (contador). 
 Al presionar el botón FINALIZAR se debe detener los mensajes.

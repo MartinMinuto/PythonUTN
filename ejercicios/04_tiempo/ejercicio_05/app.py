@@ -7,6 +7,9 @@ import customtkinter
 
 
 '''
+nombre: Martin
+apellido: Minuto
+
 Luego de presionar el botón 'Iniciar', se debe disparar, 3 segundos después, un saludo con el mensaje "Bienvenido a la UTN FRA".
 
 '''

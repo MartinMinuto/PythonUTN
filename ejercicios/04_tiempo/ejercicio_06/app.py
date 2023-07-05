@@ -7,6 +7,9 @@ import customtkinter
 
 
 '''
+nombre: Martin
+apellido: Minuto
+
 Luego de presionar el botón 'Iniciar', se inhabilita el botón durante 3(tres) segundos
 '''
 

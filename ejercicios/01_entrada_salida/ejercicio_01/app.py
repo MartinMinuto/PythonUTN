@@ -6,8 +6,8 @@ import customtkinter
 
 
 '''
-nombre:
-apellido:
+nombre: Martin
+apellido: Minuto
 ---
 Ejercicio: entrada_salida_01
 ---
