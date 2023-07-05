@@ -32,7 +32,29 @@ class App(customtkinter.CTk):
 
 
     def btn_comenzar_ingreso_on_click(self):
-        pass
+        numeros = []
+        while True:
+            numero = prompt(title="Ingresar número", prompt="Ingrese un número:")
+            if numero is None:
+                break
+            elif numero == "0":
+                break
+            numeros.append(float(numero))
+
+        suma_acumulada = 0
+        producto = 1
+        for numero in numeros:
+            if numero > 0:
+                suma_acumulada += numero
+            elif numero < 0:
+                producto *= numero
+
+
+        self.txt_suma_acumulada.delete(0, 2000)
+        self.txt_suma_acumulada.insert(0, suma_acumulada)
+        
+        self.txt_producto.delete(0, 2000)
+        self.txt_producto.insert(0, producto)
 
     
 if __name__ == "__main__":
