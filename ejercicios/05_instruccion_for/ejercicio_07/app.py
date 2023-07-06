@@ -22,7 +22,16 @@ class App(customtkinter.CTk):
 
 
     def btn_mostrar_on_click(self):
-        pass
+        numero = int(prompt(title="Numero", prompt="Seleccione un numero"))
+        numero_divisores = []
+
+        for i in range(1, numero):
+            if numero % i == 0:
+              numero_divisores.append(i)
+
+        cantidad_divisores = len(numero_divisores)
+
+        print("Los numeros pares son {0} y la cantidad de numero pares son {1}".format(numero_divisores, cantidad_divisores))
         
     
 if __name__ == "__main__":
