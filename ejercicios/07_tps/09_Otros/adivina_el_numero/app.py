@@ -12,13 +12,7 @@ Al comenzar el juego generamos un número secreto del 1 al 100, en la pantalla d
 para ingresar un número y un botón “Verificar”, si el número ingresado es el mismo que el número secreto se dará por terminado
  el juego con un mensaje similar a este: 
 
-En esta oportunidad el juego evaluará tus aptitudes a partir de la cantidad de intentos, por lo cual se informará lo siguiente:
-    1° intento: “usted es un Psíquico”.
-	2° intento: “excelente percepción”.
-	3° intento: “Esto es suerte”.
-	4° hasta 6° intento: “Excelente técnica”.
-	Más de 6 intentos: “afortunado en el amor!!”.
-
+“Ganaste en X intentos”.
 de no ser igual se debe informar si 
 “falta…”  para llegar al número secreto  o si 
 “se pasó…”  del número secreto.
@@ -40,8 +34,6 @@ class App(customtkinter.CTk):
 
         self.numero_secreto = random.randrange(1, 100)
         self.numero_intento = 0
-        print(self.numero_secreto)
-
 
 
     def btn_mostrar_on_click(self):
@@ -49,5 +41,6 @@ class App(customtkinter.CTk):
 
 
 if __name__ == "__main__":
-    app = App()
+    app = App() 
+    app.geometry("300x300")
     app.mainloop()

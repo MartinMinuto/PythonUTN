@@ -21,7 +21,12 @@ class App(customtkinter.CTk):
 
 
     def btn_mostrar_on_click(self):
-        pass
+        for i in range(10000):
+            numero = prompt(title="Mensaje", prompt="Seleccione numero")
+            num = float(numero)
+            if(num == 9):
+                break
+
         
     
 if __name__ == "__main__":

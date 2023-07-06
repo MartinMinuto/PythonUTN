@@ -8,7 +8,7 @@ import random
 '''
 Enunciado:
 
-Una importante empresa dediada a la produccion de alfajores nos solicita un aplicacion que les 
+Una importante empresa dediada a la produccion de alfajores nos solicita una aplicacion que les 
 permita controlar la produccion, dicha aplicacion contara con dos botones 
 
     - ALFAJOR ACEPTADO
@@ -16,7 +16,7 @@ permita controlar la produccion, dicha aplicacion contara con dos botones
 
 Mediante los cuales se registrara la cantidad total de alfajores producidos. 
 
-Por tratarce de una produccion artesanal, cada alfajor puede variar su peso, por lo cual es importante
+Por tratarse de una produccion artesanal, cada alfajor puede variar su peso, por lo cual es importante
 poder registrar el mismo al momento ACEPTARLO o DESCARTARLO. Los pesos deberan ser numeros flotantes 
 positivos.
 
@@ -84,8 +84,8 @@ class App(customtkinter.CTk):
     def btn_generar_informe_on_click(self):
         pass
             
-        
-
+    
 if __name__ == "__main__":
     app = App()
+    app.geometry("300x300")
     app.mainloop()    
