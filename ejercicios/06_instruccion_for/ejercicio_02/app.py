@@ -23,7 +23,10 @@ class App(customtkinter.CTk):
 
 
     def btn_mostrar_on_click(self):
-        pass    
+        numeros = [1,2,3,4,5]
+        mensaje = len(numeros)
+        for i in range(mensaje):
+            alert(title="Mensaje", message=numeros[mensaje-i-1])
        
             
 
