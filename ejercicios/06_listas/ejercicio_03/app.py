@@ -24,7 +24,11 @@ class App(customtkinter.CTk):
 
 
     def btn_calcular_on_click(self):
-        pass
+        for i in self.lista_datos:
+            numero_alto = int(max(self.lista_datos))
+            alert(title="Titulo", message=str(numero_alto))
+            break
+
     
 if __name__ == "__main__":
     app = App()
