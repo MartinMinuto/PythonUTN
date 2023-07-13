@@ -60,37 +60,39 @@ class App(customtkinter.CTk):
         precio_aumento10 = precio * 1.10
         precio_descuento20 = precio * 0.80
         precio_descuento10 = precio * 0.90
+        precio_final = 0
         estacion = self.combobox_estaciones.get()
         destino = self.combobox_destino.get()
         match(estacion):
             case "Invierno":
                 if(destino == "Bariloche"):
-                    alert(title="Precio", message="El precio es ${0}".format(precio_aumento20))
+                    precio_final = precio_aumento20
                 elif(destino == "Cataratas"):
-                    alert(title="Precio", message="El precio es ${0}".format(precio_descuento10))
+                    precio_final = precio_descuento10
                 elif(destino == "Cordoba"):
-                    alert(title="Precio", message="El precio es ${0}".format(precio_descuento10))
+                    precio_final = precio_descuento10
                 elif(destino == "Mar del plata"):
-                    alert(title="Precio", message="El precio es ${0}".format(precio_descuento20))
+                    precio_final = precio_descuento20
             case "Verano":
                 if(destino == "Bariloche"):
-                    alert(title="Precio", message="El precio es ${0}".format(precio_descuento20))
+                    precio_final = precio_descuento20
                 elif(destino == "Cataratas"):
-                    alert(title="Precio", message="El precio es ${0}".format(precio_aumento10))
+                    precio_final = precio_aumento10
                 elif(destino == "Cordoba"):
-                    alert(title="Precio", message="El precio es ${0}".format(precio_aumento10))
+                    precio_final = precio_aumento10
                 elif(destino == "Mar del plata"):
-                    alert(title="Precio", message="El precio es ${0}".format(precio_aumento20))
+                    precio_final = precio_aumento20
             case "Otoño" | "Primavera":
                 if(destino == "Bariloche"):
-                    alert(title="Precio", message="El precio es ${0}".format(precio_aumento10))
+                    precio_final = precio_aumento10
                 elif(destino == "Cataratas"):
-                    alert(title="Precio", message="El precio es ${0}".format(precio_aumento10))
+                    precio_final = precio_aumento10
                 elif(destino == "Cordoba"):
-                    alert(title="Precio", message="El precio es ${0}".format(precio))
+                    precio_final = precio
                 elif(destino == "Mar del plata"):
-                    alert(title="Precio", message="El precio es ${0}".format(precio_aumento10))
+                    precio_final == precio_aumento10
             
+        alert(title="Precio", message="El precio es ${0}".format(precio_final))    
             
     
 if __name__ == "__main__":
