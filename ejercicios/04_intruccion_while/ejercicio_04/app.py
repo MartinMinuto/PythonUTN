@@ -35,7 +35,7 @@ class App(customtkinter.CTk):
             match(numero_int):
                 case 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 0:
                     flag_continuar = False
-            # if(numero_int == 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 0):
+            # if(numero_int == 1 ):
             #     flag_continuar = False
             # elif(numero_int == 2):
             #     flag_continuar = False

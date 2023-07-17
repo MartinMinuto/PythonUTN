@@ -35,7 +35,7 @@ class App(customtkinter.CTk):
 
 
     def btn_comenzar_ingreso_on_click(self):
-        numeros = []
+        acumulador = 0
         suma = 0
         contador = 0
 
@@ -45,7 +45,7 @@ class App(customtkinter.CTk):
             if numero is None:
                 break
             
-            numeros.append(numero)
+            acumulador += int(numero)
             suma += int(numero)
             contador += 1
         
