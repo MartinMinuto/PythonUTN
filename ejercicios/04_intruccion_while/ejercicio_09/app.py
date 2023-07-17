@@ -35,7 +35,9 @@ class App(customtkinter.CTk):
 
 
     def btn_comenzar_ingreso_on_click(self):
-        numeros = []
+        acumulador = 0
+        mayor = 0
+        menor = 0
 
         while True:
             numero = prompt(title="Ingresar número", prompt="Ingrese un número:")
@@ -43,16 +45,15 @@ class App(customtkinter.CTk):
             if numero is None:
                 break
 
-            numeros.append(numero)
+            acumulador += numero
+            
 
-        maximo = max(numeros)
-        minimo = min(numeros)
-
-        self.txt_maximo.delete(0,100)
-        self.txt_maximo.insert(0, maximo)
 
         self.txt_minimo.delete(0,100)
-        self.txt_minimo.insert(0, minimo)
+        self.txt_minimo.insert(0, str(menor))
+
+        self.txt_maximo.delete(0,100)
+        self.txt_maximo.insert(0, str(mayor))
 
     
 if __name__ == "__main__":

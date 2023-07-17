@@ -34,18 +34,19 @@ class App(customtkinter.CTk):
 
 
     def btn_comenzar_ingreso_on_click(self):
-        flag_continuar = True
-        while(flag_continuar):
-            nota1 = int(prompt(title="Primera nota", prompt="Ingrese la nota"))
-            nota2 = int(prompt(title="Segunda nota", prompt="Ingrese la nota"))
-            nota3 = int(prompt(title="Tercera nota", prompt="Ingrese la nota"))
-            nota4 = int(prompt(title="Cuarta nota", prompt="Ingrese la nota"))
-            nota5 = int(prompt(title="Quinta nota", prompt="Ingrese la nota"))
-            suma = nota1 + nota2 + nota3 + nota4 + nota5
-            promedio = suma / 5
-            self.txt_suma_acumulada.insert(0, suma)
-            self.txt_promedio.insert(0, promedio)
-            flag_continuar = False
+        acumulador = 0
+        sumador = 0
+        cantidad = 0
+        while(acumulador <= 4):
+            nota = int(prompt(title="Primera nota", prompt="Ingrese la nota"))
+            acumulador += 1
+            sumador += nota
+            cantidad += 1
+        
+        promedio = sumador / cantidad
+        self.txt_suma_acumulada.insert(0, sumador)
+        self.txt_promedio.insert(0, promedio)
+        
 
 
     
