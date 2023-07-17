@@ -31,12 +31,15 @@ class App(customtkinter.CTk):
         flag_continuar = True
         while(flag_continuar):
             letra = prompt(title="Letra", prompt="Coloca tu letra en mayuscula")
-            if(letra == "U"):
-                flag_continuar = False
-            elif(letra == "T"):
-                flag_continuar = False
-            elif(letra == "N"):
-                flag_continuar = False
+            match(letra):
+                case "U" | "T" | "N":
+                    flag_continuar = False
+            # if(letra == "U"):
+            #     flag_continuar = False
+            # elif(letra == "T"):
+            #     flag_continuar = False
+            # elif(letra == "N"):
+            #     flag_continuar = False
             
     
 if __name__ == "__main__":

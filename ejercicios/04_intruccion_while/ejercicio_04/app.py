@@ -32,26 +32,29 @@ class App(customtkinter.CTk):
         while(flag_continuar):
             numero = prompt(title="Numero", prompt="Coloca tu numero")
             numero_int = int(numero)
-            if(numero_int == 1):
-                flag_continuar = False
-            elif(numero_int == 2):
-                flag_continuar = False
-            elif(numero_int == 3):
-                flag_continuar = False
-            elif(numero_int == 4):
-                flag_continuar = False
-            elif(numero_int == 5):
-                flag_continuar = False
-            elif(numero_int == 6):
-                flag_continuar = False
-            elif(numero_int == 7):
-                flag_continuar = False
-            elif(numero_int == 8):
-                flag_continuar = False
-            elif(numero_int == 9):
-                flag_continuar = False
-            elif(numero_int == 0):
-                flag_continuar = False
+            match(numero_int):
+                case 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 0:
+                    flag_continuar = False
+            # if(numero_int == 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 0):
+            #     flag_continuar = False
+            # elif(numero_int == 2):
+            #     flag_continuar = False
+            # elif(numero_int == 3):
+            #     flag_continuar = False
+            # elif(numero_int == 4):
+            #     flag_continuar = False
+            # elif(numero_int == 5):
+            #     flag_continuar = False
+            # elif(numero_int == 6):
+            #     flag_continuar = False
+            # elif(numero_int == 7):
+            #     flag_continuar = False
+            # elif(numero_int == 8):
+            #     flag_continuar = False
+            # elif(numero_int == 9):
+            #     flag_continuar = False
+            # elif(numero_int == 0):
+            #     flag_continuar = False
 
 
 if __name__ == "__main__":
