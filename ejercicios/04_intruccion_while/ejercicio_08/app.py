@@ -39,23 +39,27 @@ class App(customtkinter.CTk):
         suma_acumulada = 0
         producto = 1
         while True:
-            numero = float(prompt(title="Ingresar número", prompt="Ingrese un número:"))
+            numero = prompt(title="Ingresar número", prompt="Ingrese un número:")
             if numero is None:
                 break
-            elif numero == 0:
+            elif numero == "0":
+                alert(title="Titulo", message="Se ingreso 0")
                 break
+            elif numero == "":
+                alert(title="Titulo", message="No se ingresaron numeros")
+                break
+            numero = float(numero)
             acumulador += float(numero)
             if numero > 0:
                 suma_acumulada += numero
             elif numero < 0:
                 producto *= numero
 
-        self.txt_suma_acumulada.delete(0, 2000)
-        self.txt_suma_acumulada.insert(0, suma_acumulada)
-
-
-        self.txt_producto.delete(0, 2000)
-        self.txt_producto.insert(0, producto)
+        if(numero != 0):
+            self.txt_suma_acumulada.delete(0, 2000)
+            self.txt_suma_acumulada.insert(0, suma_acumulada)
+            self.txt_producto.delete(0, 2000)
+            self.txt_producto.insert(0, producto)
 
     
 if __name__ == "__main__":

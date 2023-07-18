@@ -43,21 +43,34 @@ class App(customtkinter.CTk):
             
             if numero is None:
                 break
+            elif numero == "0":
+                alert(title="Titulo", message="Se ingreso 0")
+                break
+            elif numero == "":
+                alert(title="Titulo", message="No se ingresaron numeros")
+                break
 
             numero = float(numero)
             if(numero > mayor):
                 mayor = 0
                 mayor += numero
-            elif(numero < menor):
+            if(numero < menor):
                 menor = 0
                 menor += numero
 
+        if(numero != ""):
+            self.txt_minimo.delete(0,100000)
+            self.txt_minimo.insert(0, str(menor))
 
-        self.txt_minimo.delete(0,100)
-        self.txt_minimo.insert(0, str(menor))
+            self.txt_maximo.delete(0,100000)
+            self.txt_maximo.insert(0, str(mayor))
+        elif(numero == "0" or 0):
+            self.txt_minimo.delete(0,100000)
+            self.txt_maximo.delete(0,100000)
+        elif(numero == ""):
+            self.txt_minimo.delete(0,100000)
+            self.txt_maximo.delete(0,100000)
 
-        self.txt_maximo.delete(0,100)
-        self.txt_maximo.insert(0, str(mayor))
 
     
 if __name__ == "__main__":

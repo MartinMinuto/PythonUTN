@@ -36,7 +36,6 @@ class App(customtkinter.CTk):
 
 
     def btn_comenzar_ingreso_on_click(self):
-        numeros = []
         positivo = 0
         cantidad_positivos = 0
         negativo = 0
@@ -48,9 +47,12 @@ class App(customtkinter.CTk):
 
             if numero is None:
                 break
+            elif numero == "":
+                alert(title="Titulo", message="No se ingresaron numeros")
+                break
             
             numero = float(numero)
-            numeros.append(numero)
+
         
             if(numero > 0):
                 positivo += numero
