@@ -52,7 +52,6 @@ class App(customtkinter.CTk):
                 break
             
             numero = float(numero)
-
         
             if(numero > 0):
                 positivo += numero
