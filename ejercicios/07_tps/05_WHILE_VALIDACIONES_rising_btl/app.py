@@ -50,27 +50,37 @@ class App(customtkinter.CTk):
         self.btn_validar.grid(row=4, pady=20, columnspan=2, sticky="nsew")
 
     def btn_validar_on_click(self):
-        apellido = prompt(title="Apellido", prompt="Ingresar apellido")
-        self.txt_apellido.delete(0,100)
-        self.txt_apellido.insert(1, apellido)
+        apellido = str(prompt(title="Apellido", prompt="Ingresar apellido"))
+
+        while(apellido):
+            if(apellido == int):
+                alert("Titulo", "Se ingreso un numero")
+                break
+            elif(apellido == ""):
+                alert("Titulo", "No se ingreso el apellido")
+                break
 
         edad = int(prompt(title="Edad", prompt="Ingresar edad"))
-        if(edad >= 18 or edad <= 90):
-            self.txt_edad.delete(0,100)
-            self.txt_edad.insert(1, edad)
-        else:
-            alert(title="Edad errorea", message="No tiene la edad solicitada")
 
-        estado_civil = self.combobox_tipo.get()
+        while(edad):
+            if(edad == float or str):
+                alert("Titulo", "No se ingreso la edad")
+                break
+            elif(edad == ""):
+                alert("Titulo", "No se ingreso la edad")
+                break
+            elif(edad < 18 or edad > 90):
+                alert("Titulo", "No tienes la edad para votar")
+                break
 
-        legajo = int(prompt(title="Nro de legajo", prompt="Ingrese su numero de legajo"))
-        if(legajo <= 1000 or legajo >= 9999):
-            alert(title="Legajo incorrecto", message="El numero de Legajo no es correcto")
-        else:
-            self.txt_legajo.delete(1,10000)
-            self.txt_legajo.insert(1, legajo)
-
-
+        self.combobox_estado_civil = customtkinter.CTkComboBox(
+            master=self, values=["Soltero/a", "Casado/a", "Divorciado/a", "Viudo/a"])
+        self.combobox_estado_civil.grid(row=2, column=1, padx=20, pady=10)
+        estado = self.combobox_estado_civil.get()
+        numero = prompt(title="Nro Legajo", prompt="Ingresar numero de legajo")
+            
+                
+            
 
 if __name__ == "__main__":
     app = App()
