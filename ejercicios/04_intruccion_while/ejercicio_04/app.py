@@ -28,8 +28,7 @@ class App(customtkinter.CTk):
         
     
     def btn_validar_numero_on_click(self):
-        numero = prompt(title="Numero", prompt="Coloca tu numero")
-        numero_int = int(numero)
+        flag_continuar = True
         while(flag_continuar):
             numero = prompt(title="Numero", prompt="Coloca tu numero")
             numero_int = int(numero)

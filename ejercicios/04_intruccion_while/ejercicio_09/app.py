@@ -35,9 +35,8 @@ class App(customtkinter.CTk):
 
 
     def btn_comenzar_ingreso_on_click(self):
-        acumulador = 0
         mayor = 0
-        menor = 0
+        menor = 10000
 
         while True:
             numero = prompt(title="Ingresar número", prompt="Ingrese un número:")
@@ -45,8 +44,13 @@ class App(customtkinter.CTk):
             if numero is None:
                 break
 
-            acumulador += numero
-            
+            numero = float(numero)
+            if(numero > mayor):
+                mayor = 0
+                mayor += numero
+            elif(numero < menor):
+                menor = 0
+                menor += numero
 
 
         self.txt_minimo.delete(0,100)
