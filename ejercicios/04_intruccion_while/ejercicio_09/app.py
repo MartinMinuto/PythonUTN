@@ -50,7 +50,7 @@ class App(customtkinter.CTk):
                 break
 
             numero = float(numero)
-            if(flag == True):
+            if(flag):
                 mayor = numero
                 menor = numero
                 flag = False
@@ -60,18 +60,21 @@ class App(customtkinter.CTk):
                 elif(numero < menor):
                     menor = numero
 
-        if(numero != ""):
-            self.txt_minimo.delete(0,100000)
-            self.txt_minimo.insert(0, str(menor))
-
-            self.txt_maximo.delete(0,100000)
-            self.txt_maximo.insert(0, str(mayor))
+        if(mayor == None):
+            alert(title="Error", message="No se ingreso numero")
         elif(numero == "0" or 0):
             self.txt_minimo.delete(0,100000)
             self.txt_maximo.delete(0,100000)
         elif(numero == ""):
             self.txt_minimo.delete(0,100000)
             self.txt_maximo.delete(0,100000)
+        else:
+            self.txt_minimo.delete(0,100000)
+            self.txt_minimo.insert(0, menor)
+
+            self.txt_maximo.delete(0,100000)
+            self.txt_maximo.insert(0, mayor)
+            
 
 
     

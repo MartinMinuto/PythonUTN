@@ -50,36 +50,46 @@ class App(customtkinter.CTk):
         self.btn_validar.grid(row=4, pady=20, columnspan=2, sticky="nsew")
 
     def btn_validar_on_click(self):
-        apellido = str(prompt(title="Apellido", prompt="Ingresar apellido"))
-
-        while(apellido):
-            if(apellido == int):
-                alert("Titulo", "Se ingreso un numero")
+        flag = True
+        while(flag):
+            apellido = prompt(title="Apellido", prompt="Ingresar apellido")
+            if(apellido == float or apellido == int or apellido == "" or apellido == None):
+                alert("Titulo", "Se ingreso un numero o no se ingreso nada")
                 break
-            elif(apellido == ""):
-                alert("Titulo", "No se ingreso el apellido")
+            else:
+                self.txt_apellido.delete(0,10000)
+                self.txt_apellido.insert(0,apellido)
+            edad = prompt(title="Edad", prompt="Ingresar edad")
+            if(edad == float or edad == str or edad == "" or edad is None):
+                alert("Titulo", "No tienes la edad para votar, no se ingreso un numero o no se ingreso nada")
                 break
-
-        edad = int(prompt(title="Edad", prompt="Ingresar edad"))
-
-        while(edad):
-            if(edad == float or str):
-                alert("Titulo", "No se ingreso la edad")
+            edad = int(edad)
+            if(edad < 18 or edad > 90):
+                alert("Titulo", "No tienes la edad para votar, no se ingreso un numero o no se ingreso nada")
                 break
-            elif(edad == ""):
-                alert("Titulo", "No se ingreso la edad")
-                break
-            elif(edad < 18 or edad > 90):
-                alert("Titulo", "No tienes la edad para votar")
-                break
-
-        self.combobox_estado_civil = customtkinter.CTkComboBox(
-            master=self, values=["Soltero/a", "Casado/a", "Divorciado/a", "Viudo/a"])
-        self.combobox_estado_civil.grid(row=2, column=1, padx=20, pady=10)
-        estado = self.combobox_estado_civil.get()
-        numero = prompt(title="Nro Legajo", prompt="Ingresar numero de legajo")
+            else:
+                self.txt_edad.delete(0,10000)
+                self.txt_edad.insert(0, edad)
+            estado = self.combobox_tipo.get()
             
-                
+            legajo = prompt(title="Nro Legajo", prompt="Ingresar numero de legajo")
+            if(legajo == float or legajo == str or legajo == "" or legajo is None):
+                alert("Titulo", "No se reconoce ese numero de legajo")
+                break
+            legajo = int(legajo)
+            if(legajo < 1000 or legajo > 9999):
+                alert("Titulo", "No se reconoce ese numero de legajo")
+                break
+            else:
+                self.txt_legajo.delete(0,10000)
+                self.txt_legajo.insert(0,legajo)
+
+            flag = False
+
+        if(flag != False):
+            self.txt_legajo.delete(0,10000)
+            self.txt_apellido.delete(0,10000)
+            self.txt_edad.delete(0,10000)
             
 
 if __name__ == "__main__":
