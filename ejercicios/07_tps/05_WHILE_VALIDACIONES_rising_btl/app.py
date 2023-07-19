@@ -52,6 +52,7 @@ class App(customtkinter.CTk):
     def btn_validar_on_click(self):
         flag = True
         while(flag):
+
             apellido = prompt(title="Apellido", prompt="Ingresar apellido")
             if(apellido == float or apellido == int or apellido == "" or apellido == None):
                 alert("Titulo", "Se ingreso un numero o no se ingreso nada")
@@ -59,6 +60,7 @@ class App(customtkinter.CTk):
             else:
                 self.txt_apellido.delete(0,10000)
                 self.txt_apellido.insert(0,apellido)
+
             edad = prompt(title="Edad", prompt="Ingresar edad")
             if(edad == float or edad == str or edad == "" or edad is None):
                 alert("Titulo", "No tienes la edad para votar, no se ingreso un numero o no se ingreso nada")
@@ -70,7 +72,6 @@ class App(customtkinter.CTk):
             else:
                 self.txt_edad.delete(0,10000)
                 self.txt_edad.insert(0, edad)
-            estado = self.combobox_tipo.get()
             
             legajo = prompt(title="Nro Legajo", prompt="Ingresar numero de legajo")
             if(legajo == float or legajo == str or legajo == "" or legajo is None):
