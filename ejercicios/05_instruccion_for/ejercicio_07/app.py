@@ -5,6 +5,8 @@ from tkinter.simpledialog import askstring as prompt
 import customtkinter
 
 '''
+Martin 
+Minuto
 Al presionar el botón Mostrar pedir un número. mostrar los números divisores desde el 1 al número ingresado, 
 y mostrar la cantidad de números divisores encontrados.
 '''
@@ -31,7 +33,7 @@ class App(customtkinter.CTk):
 
         cantidad_divisores = len(numero_divisores)
 
-        print("Los numeros pares son {0} y la cantidad de numero pares son {1}".format(numero_divisores, cantidad_divisores))
+        print("Los numeros divisores son {0} y la cantidad de numero divisores son {1}".format(numero_divisores, cantidad_divisores))
         
     
 if __name__ == "__main__":

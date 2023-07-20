@@ -5,6 +5,8 @@ from tkinter.simpledialog import askstring as prompt
 import customtkinter
 
 '''
+Martin 
+Minuto
 Al presionar el botón Mostrar pedir un número. Informar si el número es PRIMO o no.
 '''
 

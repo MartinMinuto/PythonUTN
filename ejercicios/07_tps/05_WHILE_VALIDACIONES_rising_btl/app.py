@@ -57,7 +57,7 @@ class App(customtkinter.CTk):
             if(apellido == float or apellido == int or apellido == "" or apellido == None):
                 alert("Titulo", "Se ingreso un numero o no se ingreso nada")
                 break
-            else:
+            elif(apellido.isalpha()):
                 self.txt_apellido.delete(0,10000)
                 self.txt_apellido.insert(0,apellido)
 
@@ -72,6 +72,9 @@ class App(customtkinter.CTk):
             else:
                 self.txt_edad.delete(0,10000)
                 self.txt_edad.insert(0, edad)
+
+            estado = prompt(title="Titulo", prompt="Ingresar Estado Civil : Soltero/a, Casado/a, Divorciado/a, Viudo/a")
+            self.combobox_tipo.set(estado)
             
             legajo = prompt(title="Nro Legajo", prompt="Ingresar numero de legajo")
             if(legajo == float or legajo == str or legajo == "" or legajo is None):

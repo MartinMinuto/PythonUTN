@@ -29,7 +29,84 @@ class App(customtkinter.CTk):
         self.btn_validar.grid(row=4, pady=20, columnspan=2, sticky="nsew")
 
     def btn_validar_on_click(self):
-        pass
+        edad_sumador = 0
+        contador_edad = 0
+        cantidad_votos = 0
+        cantidad_de_candidatos = 0
+        flag_votos = True
+
+        Continuar = question("Titulo", "Desea comenzar?")
+        while(Continuar):
+            nombre = prompt("Titulo", prompt="Nombre del candidato")
+
+            if(nombre is None):
+                alert("Error", message="No se puede registrar el nombre")
+                break
+            if(not nombre.isalpha() or nombre == ""):
+                alert("Error", message="No se puede registrar el nombre")
+                break
+
+            edad = prompt("Titulo", prompt="Edad")
+
+            if(edad is None):
+                alert("Error", message="No se puede registrar la edad")
+                break
+            if(not edad.isnumeric or edad == ""):
+                alert("Error", message="No se puede registrar la edad")
+                break
+            edad = int(edad)
+            if(edad < 24):
+                alert("Error", message="No se puede registrar la edad")
+                break
+            else:
+                edad_sumador += edad
+                contador_edad += 1
+
+            votos = prompt("Titulo", prompt="Cantidad de votos")
+
+            if(votos is None):
+                alert("Error", message="No se puede registrar los votos")
+                break
+            if(not votos.isnumeric or votos == ""):
+                alert("Error", message="No se puede registrar los votos")
+                break
+            votos = int(votos)
+            if(votos < 0):
+                alert("Error", message="No se puede registrar los votos")
+                break
+            elif(flag_votos):
+                votos_mas_cantidad = 0
+                votos_menor_cantidad = 0
+                nombre_mas_votos = nombre
+                nombre_menos_votos = nombre
+                edad_menor = edad
+                flag_votos = False
+            elif(votos_mas_cantidad < votos):
+                votos_mas_cantidad = 0
+                votos_mas_cantidad += votos
+                nombre_mas_votos = nombre
+            elif(votos_menor_cantidad > votos):
+                votos_menor_cantidad = 0
+                votos_menor_cantidad += votos
+                nombre_menos_votos = nombre
+                edad_menor = edad
+
+            cantidad_votos += votos
+            cantidad_de_candidatos += 1
+
+            Seguir = question(title="Continuar", message="Desea seguir?")
+
+            if(Seguir == False):
+                break
+
+
+        print(f"Persona con mas votos {nombre_mas_votos}")
+        print(f"Nombre del candidato con menos votos {nombre_menos_votos}")
+        print(f"La edad de {nombre_menos_votos} que tiene menos votos es {edad_menor}")
+        print(f"Promedio de edad de los candidatos {edad_sumador / contador_edad}")
+        print(f"Cantidad total de votos {cantidad_votos}")
+
+
 
 
 if __name__ == "__main__":
