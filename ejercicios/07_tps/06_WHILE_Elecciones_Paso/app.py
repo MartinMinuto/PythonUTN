@@ -81,11 +81,11 @@ class App(customtkinter.CTk):
                 nombre_menos_votos = nombre
                 edad_menor = edad
                 flag_votos = False
-            elif(votos_mas_cantidad < votos):
+            elif(votos_mas_cantidad > votos):
                 votos_mas_cantidad = 0
                 votos_mas_cantidad += votos
                 nombre_mas_votos = nombre
-            elif(votos_menor_cantidad > votos):
+            elif(votos_menor_cantidad < votos):
                 votos_menor_cantidad = 0
                 votos_menor_cantidad += votos
                 nombre_menos_votos = nombre
@@ -99,12 +99,15 @@ class App(customtkinter.CTk):
             if(Seguir == False):
                 break
 
-
-        print(f"Persona con mas votos {nombre_mas_votos}")
-        print(f"Nombre del candidato con menos votos {nombre_menos_votos}")
-        print(f"La edad de {nombre_menos_votos} que tiene menos votos es {edad_menor}")
-        print(f"Promedio de edad de los candidatos {edad_sumador / contador_edad}")
-        print(f"Cantidad total de votos {cantidad_votos}")
+        if(Continuar == False or nombre is None or edad is None or votos is None):
+            print("No se resgitraron datos")
+        else:
+            print(f"Persona con mas votos {nombre_mas_votos}")
+            print(f"Nombre del candidato con menos votos {nombre_menos_votos}")
+            print(f"La edad de {nombre_menos_votos} que tiene menos votos es {edad_menor}")
+            print(f"Promedio de edad de los candidatos {edad_sumador / contador_edad}")
+            print(f"Cantidad total de votos {cantidad_votos}")
+            
 
 
 
