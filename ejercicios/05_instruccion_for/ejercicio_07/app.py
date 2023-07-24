@@ -25,15 +25,14 @@ class App(customtkinter.CTk):
 
     def btn_mostrar_on_click(self):
         numero = int(prompt(title="Numero", prompt="Seleccione un numero"))
-        numero_divisores = []
+        contador = 0
 
         for i in range(1, numero):
             if numero % i == 0:
-              numero_divisores.append(i)
+              print("Los numeros divisores son:", i)
+              contador += 1
 
-        cantidad_divisores = len(numero_divisores)
-
-        print("Los numeros divisores son {0} y la cantidad de numero divisores son {1}".format(numero_divisores, cantidad_divisores))
+        print("La cantidad de numero divisores son ", contador)
         
     
 if __name__ == "__main__":
