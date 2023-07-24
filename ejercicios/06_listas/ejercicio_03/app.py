@@ -20,7 +20,7 @@ class App(customtkinter.CTk):
         self.btn_calcular = customtkinter.CTkButton(master=self, text="MÁXIMO", command=self.btn_calcular_on_click)
         self.btn_calcular.grid(row=2, pady=10, columnspan=2, sticky="nsew")
 
-        self.lista_datos = [1,80,5,0,15,-5,1,79]
+        self.lista_datos = [1,80,150,0,15,-5,1,79]
 
 
     def btn_calcular_on_click(self):
