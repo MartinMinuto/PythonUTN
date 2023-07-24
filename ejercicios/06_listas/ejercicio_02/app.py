@@ -31,6 +31,7 @@ class App(customtkinter.CTk):
             alert(title="Titulo", message=str(numero))
         
     def btn_cargar_on_click(self):
+        self.lista_datos.clear()
         for i in range(3):
             numero = prompt(title="Titulo", prompt="Numero")
             self.lista_datos.append(int(numero))
