@@ -24,10 +24,11 @@ class App(customtkinter.CTk):
 
 
     def btn_calcular_on_click(self):
+        numero = self.lista_datos[0]
         for i in self.lista_datos:
-            numero_minimo = int(min(self.lista_datos))
-            alert(title="Titulo", message=str(numero_minimo))
-            break
+            if(numero > i):
+                numero = i
+        alert("Titulo", message=numero)
     
     
 if __name__ == "__main__":
