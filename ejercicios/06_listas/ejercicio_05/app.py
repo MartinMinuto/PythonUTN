@@ -28,11 +28,12 @@ class App(customtkinter.CTk):
         for i in self.lista_datos:
             sumador += i
             print(sumador)
-            
+
         contador = len(self.lista_datos)
 
         promedio = sumador / contador
         alert("Titulo", message=promedio)
+        
 if __name__ == "__main__":
     app = App()
     app.mainloop()
