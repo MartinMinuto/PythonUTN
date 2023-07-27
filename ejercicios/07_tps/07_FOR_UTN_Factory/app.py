@@ -52,6 +52,10 @@ class App(customtkinter.CTk):
         contador_js = 0
         contador_net = 0
         cantidad_postulantes = 2
+        contador_edad_masculina = 0
+        contador_edad_femenina = 0
+        contador_edad_NB = 0
+        edad_postulante = 0
 
         for i in range(cantidad_postulantes):
             flag_nombre = True
@@ -75,19 +79,23 @@ class App(customtkinter.CTk):
                     edad = int(edad)
                     if(edad <= 25 and edad <= 40):
                         contador_edad += 1
+                        edad_postulante = edad
             flag_genero = True
             while(flag_genero):
                 genero = prompt(title="Genero", prompt="Ingresar Genero (M,F o NB)")
                 match(genero):
                     case "M":
-                        flag_genero = False
                         contador_m += 1
+                        contador_edad_masculina += edad
+                        flag_genero = False
                     case "F":
-                        flag_genero = False
                         contador_f += 1
-                    case "NB":
+                        contador_edad_femenina += edad
                         flag_genero = False
+                    case "NB":
                         contador_nb += 1
+                        contador_edad_NB += edad
+                        flag_genero = False
                     case _: 
                         alert("Error", "Eso no parece ser un Genero")
             flag_tecnologia = True
@@ -95,14 +103,14 @@ class App(customtkinter.CTk):
                 tecnologia = prompt(title="Genero", prompt="Ingresar Tecnologia (PYTHON - JS - ASP.NET)")       
                 match(tecnologia):
                     case "PYTHON":
-                        flag_tecnologia = False
                         contador_phyton += 1
+                        flag_tecnologia = False
                     case "JS" :
-                        flag_tecnologia = False
                         contador_js += 1
-                    case "ASP.NET":
                         flag_tecnologia = False
+                    case "ASP.NET":
                         contador_net += 1
+                        flag_tecnologia = False
                     case _: 
                         alert("Error", "Eso no parece una tecnologia")
             flag_puesto = True
@@ -110,14 +118,16 @@ class App(customtkinter.CTk):
                 puesto = prompt(title="Genero", prompt="Ingresar puesto (Jr - Ssr - Sr)")     
                 match(puesto):
                     case "Jr":
-                        flag_puesto = False
                         contador_jr += 1
+                        flag_puesto = False
+                        if(edad_postulante < edad):
+                            edad_postulante = edad
                     case "Ssr":
-                        flag_puesto = False
                         contador_ssr += 1
-                    case "Sr":
                         flag_puesto = False
+                    case "Sr":
                         contador_sr += 1
+                        flag_puesto = False
                     case _: 
                         alert("Error", "Eso no parece ser un puesto")
 
@@ -126,7 +136,34 @@ class App(customtkinter.CTk):
         tota_f = ((contador_f * 100) / cantidad_postulantes)
         total_nb = ((contador_nb * 100) / cantidad_postulantes)
 
-        print(f"los valores son %{total_m}, %{tota_f} y %{total_nb}")
+        print(f"los valores son %{total_m} M, %{tota_f} F y %{total_nb} NB")
+
+        porcentaje_edad_m = contador_edad_masculina
+        porcentaje_edad_f = contador_edad_femenina
+        porcentaje_edad_nb = contador_edad_NB
+
+        if(porcentaje_edad_f == 0 or porcentaje_edad_nb == 0):
+            porcentaje_edad_m = (contador_edad_masculina / contador_m)
+        elif(porcentaje_edad_nb == 0 or porcentaje_edad_m == 0):
+            porcentaje_edad_f = (contador_edad_femenina / contador_f)
+        elif(porcentaje_edad_m == 0 or porcentaje_edad_f == 0):
+            porcentaje_edad_nb = (contador_edad_NB / contador_nb)
+        else:
+            porcentaje_edad_m = (contador_edad_masculina / contador_m)
+            porcentaje_edad_f = (contador_edad_femenina / contador_f)
+            porcentaje_edad_nb = (contador_edad_NB / contador_nb)
+
+        print(f"los promedio de edad son: {porcentaje_edad_m} M, {porcentaje_edad_f} F y {porcentaje_edad_nb} NB")
+
+        if(tecnologia):
+            if(contador_net > contador_js and contador_net > contador_phyton):
+                print("Hay mas programdores ASP.NET")
+            elif(contador_phyton > contador_net and contador_phyton > contador_js):
+                print("Hay mas programdores de Python")
+            elif(contador_js > contador_net and contador_js > contador_phyton):
+                print("Hay mas programdores de JS")
+
+        print(f"La edad del postulante jr man joves es :{edad_postulante}")
 
 if __name__ == "__main__":
     app = App()
