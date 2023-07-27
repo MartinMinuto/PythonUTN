@@ -41,8 +41,19 @@ class App(customtkinter.CTk):
         self.btn_validar.grid(row=4, pady=20, columnspan=2, sticky="nsew")
 
     def btn_validar_on_click(self):
+        contador_edad = 0
+        contador_jr = 0
+        contador_ssr = 0
+        contador_sr = 0
+        contador_m = 0
+        contador_f = 0
+        contador_nb = 0
+        contador_phyton = 0
+        contador_js = 0
+        contador_net = 0
+        cantidad_postulantes = 2
 
-        for i in range(1):
+        for i in range(cantidad_postulantes):
             flag_nombre = True
             while(flag_nombre):
                 nombre = prompt(title="Nombre", prompt="Ingresar nombre")
@@ -51,7 +62,6 @@ class App(customtkinter.CTk):
                 elif(nombre.isnumeric()):
                     alert("Error", "Eso no parece un nombre")
                 else:
-                    print(nombre)
                     flag_nombre = False
             flag_edad = True
             while(flag_edad):
@@ -61,37 +71,62 @@ class App(customtkinter.CTk):
                 elif(not edad.isnumeric()):
                     alert("Error", "Eso no parece una edad")
                 else:
-                    print(edad)
                     flag_edad = False
+                    edad = int(edad)
+                    if(edad <= 25 and edad <= 40):
+                        contador_edad += 1
             flag_genero = True
             while(flag_genero):
-                genero = prompt(title="Genero", prompt="Ingresar Genero (M,F O NB)")
+                genero = prompt(title="Genero", prompt="Ingresar Genero (M,F o NB)")
                 match(genero):
-                    case "M" | "F" | "NB":
-                        print(genero)
+                    case "M":
                         flag_genero = False
+                        contador_m += 1
+                    case "F":
+                        flag_genero = False
+                        contador_f += 1
+                    case "NB":
+                        flag_genero = False
+                        contador_nb += 1
                     case _: 
                         alert("Error", "Eso no parece ser un Genero")
             flag_tecnologia = True
             while(flag_tecnologia):
                 tecnologia = prompt(title="Genero", prompt="Ingresar Tecnologia (PYTHON - JS - ASP.NET)")       
                 match(tecnologia):
-                    case "PYTHON" | "JS" | "ASP.NET":
-                        print(tecnologia)
+                    case "PYTHON":
                         flag_tecnologia = False
+                        contador_phyton += 1
+                    case "JS" :
+                        flag_tecnologia = False
+                        contador_js += 1
+                    case "ASP.NET":
+                        flag_tecnologia = False
+                        contador_net += 1
                     case _: 
                         alert("Error", "Eso no parece una tecnologia")
             flag_puesto = True
             while(flag_puesto):           
                 puesto = prompt(title="Genero", prompt="Ingresar puesto (Jr - Ssr - Sr)")     
                 match(puesto):
-                    case "Jr" | "Ssr" | "Sr":
-                        print(puesto)
+                    case "Jr":
                         flag_puesto = False
+                        contador_jr += 1
+                    case "Ssr":
+                        flag_puesto = False
+                        contador_ssr += 1
+                    case "Sr":
+                        flag_puesto = False
+                        contador_sr += 1
                     case _: 
                         alert("Error", "Eso no parece ser un puesto")
-                
 
+
+        total_m = ((contador_m * 100) / cantidad_postulantes)
+        tota_f = ((contador_f * 100) / cantidad_postulantes)
+        total_nb = ((contador_nb * 100) / cantidad_postulantes)
+
+        print(f"los valores son %{total_m}, %{tota_f} y %{total_nb}")
 
 if __name__ == "__main__":
     app = App()
